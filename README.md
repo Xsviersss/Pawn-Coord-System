@@ -5,7 +5,7 @@ This project is licensed under the MIT License.
 ## /coord Command
 
 ### What does this script do?
-The `/coord` command is an admin command used to teleport a player to a specific coordinate position in the game world.
+The `/coord` command is an admin command used to get the player specific coordinate position in the game world.
 
 It takes three parameters:
 - `x` = X coordinate
@@ -14,9 +14,9 @@ It takes three parameters:
 
 Example usage:
 
-/coord 1550.5 -1700.3 13.5
+/coord
 
-After entering the command, the player will be moved to the specified position.
+After entering the command, the player will be told the specified position/coordinate.
 
 ### How does it work?
 The script first checks whether the player has admin permission:
@@ -35,9 +35,9 @@ sscanf(params, "fff", x, y, z)
 
 If the coordinates are valid, it executes:
 
-SetPlayerPos(playerid, x, y, z);
+GetPlayerPos(playerid, x, y, z);
 
-which teleports the player to the given coordinates.
+which gets the player the coordinates of the current position.
 
 
 ---
@@ -71,7 +71,7 @@ CMD:coord(playerid, params[])
 
 
 
-/coord x y z
+/coord
 
 
 ---
